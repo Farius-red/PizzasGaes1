@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="contenido">
+        <h:form prependId="false"> 
+            <br/>
+            <h3 class="text-center"><b style="color: green">REGISTRAR USUARIOS</b></h3>
+            <br/>
+            <div class="row">
+                <div class="col-md-5" style="margin-left: 100px">
+                    <div class="form-group">
+                        <label>ROL</label>
+                        <h:selectOneMenu class="form-control" value="#{usuarioControlador.nuevoUsuario.rol}">
+                            <f:selectItem itemLabel="Seleccione un tipo de Rol" itemValue=""/>
+                            <f:selectItems value="#{tipoRolControlador.roles}" var="rol" itemLabel="#{rol.descripcion}"/>
+                        </h:selectOneMenu>
+
+                    </div>
+                    <div class="form-group">
+                        <label>TIPO DE IDENTIFICACION</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.tipoIdentificación}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Numero de Identificación: </label>
+                        <h:inputText class="form-control" a:type="number" value="#{usuarioControlador.nuevoUsuario.idUsuario}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>PRIMER NOMBRE</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.primerNombre}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>SEGUNDO NOMBRE</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.segundoNombre}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>PRIMER APELLIDO</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.primerApellido}"/>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label>SEGUNDO APELLIDO</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.segundoApellido}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>DIRECCION</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.direccion}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.email}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>TELEFONO</label>
+                        <h:inputText class="form-control" value="#{usuarioControlador.nuevoUsuario.telefono}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>CONTRASEÑA</label>
+                        <h:inputSecret class="form-control" value="#{usuarioControlador.nuevoUsuario.contraseña}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>ESTADO: </label>
+                        <h:selectOneRadio class="form-check" value="#{usuarioControlador.nuevoUsuario.estado}">
+                            <f:selectItem itemLabel="Inactivo" itemValue="0"/>
+                            <f:selectItem itemLabel="Activo" itemValue="1"/>
+
+                        </h:selectOneRadio>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="col-sm-12">
+                <center>
+                    <a class="btn btn-danger" 
+                       href="RegistroUsuario.xhtml" style="margin-right: 10px">Cancelar
+                    </a>
+                    <h:commandButton class="btn btn-success"
+                                     style="margin-left: 10px" value="Registrar" action="#{usuarioControlador.registrar()}"/>
+                </center>
+            </div>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+

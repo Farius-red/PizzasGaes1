@@ -1,0 +1,1256 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    template="/WEB-INF/includes3/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="contenido">
+        <nav class="navbar navbar-expand-lg  fixed-top py-3"  style="z-index: 1000" >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="Pagina.xhtml"><img src="#{request.contextPath}/resource/img/Logo2.png" class="logo-brand" alt="logo"/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Pagina.xhtml" style="margin-top: 10px;">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="QuienesSomos.xhtml" style="margin-top: 10px;">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px;">Menú</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#Pizzas">Pizzas</a>
+                                <a class="dropdown-item" href="#Raviolis">Raviolis</a>
+                                <a class="dropdown-item" href="#Panzerotti">Panzerotti</a>
+                                <a class="dropdown-item" href="#Spaguetti">Spaguetti</a>
+                                <a class="dropdown-item" href="#Lasagna">Lasagnas</a>
+                                <a class="dropdown-item" href="#Carnes">Carnes</a>
+                                <a class="dropdown-item" href="#Hamburguesa">Hamburguesas</a>
+                                <a class="dropdown-item" href="#Perros">Dogs</a>
+                                <a class="dropdown-item" href="#Papicar">Pa´Picar</a>
+                                <a class="dropdown-item" href="#Bebidas">Bebidas</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <i class="fas fa-cart-arrow-down nav-link dropdown-toggle" height="50px" width="50px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 40px; margin-top: 10px;"></i>
+                            <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                <table id="lista-carrito" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="btn btn-danger btn-block">Vaciar Carrito</a>
+                                <a href="compra.xhtml" id="procesar-pedido" class="btn btn-success btn-block">Realizar Pedido</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="PQRS.xhtml" style="margin-top: 10px;">PQRS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ContactenosCliente.xhtml" style="margin-top: 10px;">Contáctenos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  dropdown-toggle" href="Perfil.xhtml" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user" style="font-size: 20px;"></i></a>
+                            <h6 class="text-right" style="color: white;">Cliente</h6>
+                            <div class="dropdown-menu col-lg-12" style="text-align: right;" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="Perfil.xhtml">Perfil</a>
+                                <a class="dropdown-item" href="Pagina1.xhtml">Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <main>
+            <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+                <a href="Menu.xhtml" style="text-decoration: none;"><h1 class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>MENÚ</strong></h1></a> 
+            </div>
+        </main>
+        <div class="container" id="lista-productos">
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Pizzas" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">PIZZAS</h4>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Pizzas/PizzaEspecial.jpg" class="card-img-top" style="height: 100px;"/>
+                            </div></a> 
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Raviolis" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold"  style="font-size: 12px;">RAVIOLIS</h4>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Raviolis/RavioliEspecial.jpg" class="card-img-top" style="height: 100px;"/>
+                            </div></a> 
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Panzerotti" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">PANZEROTTI</h4>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiEspecial.jpg" class="card-img-top" style="height: 100px;"/> 
+                            </div></a>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Spaguetti" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">SPAGUETTI</h4>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Spaguetti/PastaEspecial.jpg" class="card-img-top" style="height: 100px;"/> 
+                            </div></a>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Lasagna" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">LASAGNAS</h4>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaEspecial.jpg" class="card-img-top" style="height: 100px;"/>
+                            </div></a> 
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="container" id="lista-productos">
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Carnes" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">CARNES</h4>
+
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Carnes/Carne.jpg" class="card-img-top" style="height: 100px;"/>
+                            </div></a> 
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Hamburguesa" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">HAMBURGUESAS</h4>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Hamburguesa/Hamburguesa.jpg" class="card-img-top" style="height: 100px;"/>
+                            </div></a> 
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Perros" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">HOT DOGS</h4>
+
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Perros/PerroAmericano.png" class="card-img-top" style="height: 100px;"/> 
+                            </div></a>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Papicar" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">PA´PICAR</h4>
+
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Pa´picar/Salchipapa.jpg" class="card-img-top" style="height: 100px;"/>
+                            </div></a> 
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm main">
+                    <div class="card-header">
+                        <a href="#Bebidas" style="text-decoration: none; color: black;"> <h4 class="my-0 font-weight-bold" style="font-size: 12px;">BEBIDAS</h4>
+
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Bebidas/Gaseosas.jpg" class="card-img-top" style="height: 100px;"/>
+                            </div></a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Pizzas" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>PIZZAS</strong></h1> 
+        </div>
+        <main>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">ESPECIAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaEspecial.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Pollo, Champiñones, Jamón, Queso</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="50">Agregar al Carro</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">HAWAIANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaHawaiana.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Jamón, Piña, Queso</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="51">Agregar al Carro</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CARNES</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaCarnes.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Salami, Peperoni, Jamón</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="52">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MEXICANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaMexicana.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Carne, Pico de Gallo, Jalapeño, Tostacos, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="53">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">VEGETARIANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaVegetariana.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Champiñon, Tomate, Cebolla, Orégano, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="54">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">VELEÑA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaVeleña.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Queso y Bocadillo</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="55">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">TROPICAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaTropical.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Piña, Cereza, Ciruela, Durazno, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="56">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CRIOLLA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pizzas/PizzaCriolla.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">5.600</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Mazorca, Carne, Cebolla, Pimentón, Chorizo, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="57">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main>
+            <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+                <h1 id="Raviolis" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>RAVIOLIS</strong></h1> 
+            </div>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">ESPECIAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Raviolis/RavioliEspecial.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">19.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Champiñones, Jamón, Boloñesa</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="58">Agregar al Carro</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CARBONARA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Raviolis/RavioliCarbonara.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">20.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Tocineta, Huevo, Crema de Leche</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="59">Agregar al Carro</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MIXTO 1</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Raviolis/RavioliMixto1.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">18.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Salsa Boloñesa</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="60">Agregar al Carro</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MIXTO 2</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Raviolis/RavioliMixto2.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">18.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Champiñones</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="61">Agregar al Carro</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">POLLO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Raviolis/RavioliPollo.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">17.800</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salsa con Pollo</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="62">Agregar al Carro</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">BOLOÑESA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Raviolis/RavioliBoloñes.jpg" class="card-img-top" style="height: 210px"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">17.800</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salsa de Carne</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="63">Agregar al Carro</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="card-deck mb-3 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 font-weight-bold">JUNIOR</h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Raviolis/RavioliJunior.jpg" class="card-img-top" style="height: 210px;"/>
+                                <h1 class="card-title pricing-card-title precio">$<span class="">15.000</span></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li></li>
+                                    <li>Sencillo, Mixto o Especial</li>
+                                </ul>
+                                <a href="" class="btn btn-block btn-success agregar-carrito" data-id="64">Agregar al Carro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Panzerotti" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>PANZEROTTI</strong></h1> 
+        </div>
+        <main>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">ESPECIAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiEspecial.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Champiñones, Jamón, Queso</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="65">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">HAWAIANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiHawaiana.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Jamón, Queso, PiñaJamón, Queso, Piña</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="66">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CARNES</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiCarnes.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salami, Peperoni, Jamón</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="67">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">VELEÑA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiVeleño.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Queso y Bocadillo</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="68">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MEXICANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiMexicano.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Carne, Pico de Gallo, Jalapeño,Tostacos, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="69">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CRIOLLO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiCriollo.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Mazorca, Carne, Cebolla,Pimentón, Chorizo, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="70">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">TROPICAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiTropical.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Piña, Cereza, Ciruela, Durazno, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="71">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">VEGETARIANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Panzerotti/PanzerottiVegetariano.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Champiñón, Tomate, Cebolla, Orégano, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="72">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Spaguetti" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>SPAGUETTI</strong></h1> 
+        </div>
+        <main>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">ESPECIAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaEspecial.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">18.300</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Champiñones, Jamón, Boloñesa</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="73">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">VEGETARIANO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaVegetariano.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">18.300</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salsa Napolitana, Cebolla, Pimentón, Champiñón</li>
+                            </ul>
+
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="74">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CARBONARA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaCarbonara.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">19.300</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Tocineta, Huevo, Crema de Leche</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="75">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MIXTO 1</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaMixto1.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">17.300</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Salsa Boloñesa</li>
+                            </ul>
+
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="76">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MIXTO 2</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaMixto2.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">17.300</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Champiñones</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="77">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">POLLO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaPollo.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">16.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salsa con Pollo</li>
+                            </ul>
+
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="78">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">BOLOÑESA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaBoloñesa.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">16.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salsa de Carne</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="79">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">JUNIOR</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Spaguetti/PastaJunior.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">14.000</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Sencillo, Mixto o Especial</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="80">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Lasagna" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>LASAGNAS</strong></h1> 
+        </div>
+        <main>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">ESPECIAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaEspecial.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">19.000</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Champiñones, Jamón, Boloñesa, Queso</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="81">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MEXICANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaMexicana.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">19.000</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Boloñesa, Pico de Gallo, Jalapeño, Queso</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="82">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">VEGETARIANA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaVegetariana.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">19.000</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Champiñón, Cebolla, Tomate, Pimentón, Queso</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="83">Agregar al Carro</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MIXTO 1</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaMixta1.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">18.300</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Salsa Boloñesa, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="84">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">MIXTO 2</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaMixta2.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">18.300</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pollo, Champiñones, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="85">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">POLLO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaPollo.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">17.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salsa con Pollo, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="86">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">JUNIOR</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaJunior.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">14.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Sencilla, Mixta o Especial</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="87">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">BOLOÑESA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Lasagna/LasagnaBoloñesa.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">17.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Salsa de Carne, Queso</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="88">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main>
+            <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+                <h1 id="Carnes" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>CARNES</strong></h1> 
+            </div>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">PECHUGA EN SALSA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Carnes/PechugaSalsa.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">22.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pechuga asada bañada con salsa de champiñones, acompañada de papa francesa o espaguetti.</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="89">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">PECHUGA RANCHERA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Carnes/PechugaRanchera.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">22.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pechuga asada con tocineta, Jamón y Queso, Acompañada de papa francesa y ensalada</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="90">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">PECHUGA A LA PLANCHA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Carnes/PechugaPlancha.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">19.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Acompañada de papa francesa y ensalada</li>
+                            </ul>
+                            <br/><br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="91">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CHURRASCO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Carnes/Churrasco.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">22.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Acompañado de papa francesa y ensalada</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="92">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CARNE A LA PLANCHA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Carnes/CarnePlancha.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">19.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Corte de 250 grs. acompañado de papa francesa y ensalada</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="93">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">LOMO DE CERDO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Carnes/LomoCerdo.jpg" class="card-img-top" style="height: 210px"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">17.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Corte de 250 grs. acompañado de papa francesa y ensalada</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="94">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="card-deck mb-3 text-center">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 font-weight-bold">COSTILLAS BBQ</h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="#{request.contextPath}/resource/img/Carnes/CostillasBbq.jpg" class="card-img-top" style="height: 210px;"/>
+                                <h1 class="card-title pricing-card-title precio">$<span class="">22.500</span></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li></li>
+                                    <li>Acompañadas de papa francesa arroz y ensalada</li>
+                                </ul>
+                                <a href="" class="btn btn-block btn-success agregar-carrito" data-id="95">Agregar al Carro</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Hamburguesa" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>HAMBURGUESAS</strong></h1> 
+        </div>
+        <main>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CARNE SENCILLA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Hamburguesa/Hamburguesa.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">9.800</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Con queso, cebolla, tomate, lechuga, papa fosforito y huevo de codorniz</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="96">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CARNE ESPECIAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Hamburguesa/HamburguesaEspecial.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">12.000</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Pechuga asada con tocineta, Jamón y Queso, Acompañada de papa francesa y ensalada</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="97">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">POLLO SENCILLA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Hamburguesa/HamburguesaPollo.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">10.900</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Con queso, cebolla, tomate, lechuga, papa fosforito y huevo de codorniz</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="98">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">POLLO ESPECIAL</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Hamburguesa/HamburguesaPollo2.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">13.000</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Adicionalmente con champiñones, jamón y pollo desmechado</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="99">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">DOBLE</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Hamburguesa/HamburguesaDoble.jpg" class="card-img-top" style="height: 300px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">16.400</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Con doble carne o doble pollo o mixta, y todos los ingredientes de la especial.</li>
+                            </ul>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="100">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Perros" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>HOT DOGS</strong></h1> 
+        </div>
+        <div class="container" id="lista-productos">
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">AMERICANO</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="#{request.contextPath}/resource/img/Perros/PerroAmericano.png" class="card-img-top" style="height: 300px;"/>
+                        <h1 class="card-title pricing-card-title precio">$<span class="">9.900</span></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Con salchicha Zenu americana, queso, cebolla, jamón, papa fosforito, pollo desmechado y huevo de codorniz</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-success agregar-carrito" data-id="101">Agregar al Carro</a>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SENCILLO</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="#{request.contextPath}/resource/img/Perros/PerroSencillo.jpg" class="card-img-top" style="height: 300px;"/>
+                        <h1 class="card-title pricing-card-title precio">$<span class="">8.300</span></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Con salchicha Zenu tipo long, queso, cebolla, papa fosforito
+                                y huevo de codorniz</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-success agregar-carrito" data-id="102">Agregar al Carro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Papicar" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>PA´PICAR</strong></h1> 
+        </div>
+        <main>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">COCTEL RANCHERO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pa´picar/CoctelRanchero.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">11.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Papa francesa, huevo de codorniz, chorizitos, jalapeños</li>
+                            </ul>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="103">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">SALCHIPAPA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pa´picar/Salchipapa.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">9.500</span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li></li>
+                                <li>Papa francesa con doble zenu americano</li>
+                            </ul>
+                            <br/>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="104">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">HUEVO DE CODORNIZ</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pa´picar/HuevoCodorniz.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">3.500</span></h1>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="105">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">PAPA A LA FRANCESA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pa´picar/PapaFrancesa.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">4.500</span></h1>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="106">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">PORCIÓN DE QUESO</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pa´picar/queso.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">3.000</span></h1>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="107">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">PORCIÓN DE PAN</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Pa´picar/PorcionPan.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">1.500</span></h1>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="108">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="jumbotron" style="background: url(#{request.contextPath}/resource/img/Menu.jpg); opacity: 0.7; height: 10px;">
+            <h1 id="Bebidas" class="display-3 mb-3" style="font-family: Gabriola; font-size: 50px; color: yellow; margin-left: 120px;"><strong>BEBIDAS</strong></h1> 
+        </div>
+        <main>
+            <div class="container" id="lista-productos">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">AGUA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Bebidas/Agua.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">2.000</span></h1>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="109">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">CLUB COLOMBIA</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Bebidas/ClubColombia.jpeg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">5.000</span></h1>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="110">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">GASEOSAS</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Bebidas/Gaseosas.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">1.800</span></h1>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="111">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">HIT</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Bebidas/Hit.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$ <span class="">1.500</span></h1>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="112">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">JUGO NECTAR</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Bebidas/nectar.jpg" class="card-img-top" style="height: 210px;"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">1.500</span></h1>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="113">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-bold">GATETORADE</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="#{request.contextPath}/resource/img/Bebidas/Gatetorade.jpg" class="card-img-top" style="height: 210px"/>
+                            <h1 class="card-title pricing-card-title precio">$<span class="">2.300</span></h1>
+                            <br/>
+                            <a href="" class="btn btn-block btn-success agregar-carrito" data-id="114">Agregar al Carro</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>        
+
+        <script src="#{request.contextPath}/resource/js/jquery-3.4.1.min.js"></script>
+        <script src="#{request.contextPath}/resource/js/pedido.js"></script>
+   </ui:define>
+</ui:composition>
+

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    template="/WEB-INF/includes3/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="contenido">
+        
+        <br/><br/>
+        <br/>
+        <br/>
+
+        <div class="jumbotron" style="background-image: url(#{request.contextPath}/resource/img/Quienessomos.jpg); background-size: 100%">
+            <h1 class="display-3 mb-3" style="font-family: Garamond; font-size: 40px; color: white; margin-top: 10px; margin-left: 120px;">RADICAR PQRS</h1> 
+        </div>
+        <br/>
+        <div class="container">
+            <h2 style="color:#980505">Formulario PQRS</h2>
+            <br/>
+            <form style="margin-left: 30px">
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+                        <label for="Tipo">Tipo: *</label>
+                        <select name="Tipo" id="Tipo" class="form-control">
+                            <option value="Petición">Petición</option>
+                            <option value="Queja">Queja</option>
+                            <option value="Reclamo">Reclamo</option>
+                            <option value="Sugerencia">Sugerencia</option>
+                            <option value="Felicitación">Felicitación</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="Localidad">Localidad: *</label>
+                        <select name="Localidad" id="Localidad" class="form-control">
+                            <option value="1.Usaquen">1. Usaquén</option>
+                            <option value="2.Chapinero">2. Chapinero</option>
+                            <option value="3. Santa Fe">3. Santa Fe</option>
+                            <option value="4. San Cristóbal">4. San Cristóbal</option>
+                            <option value="5. Usme">5. Usme</option>
+                            <option value="6. Tunjuelito">6. Tunjuelito</option>
+                            <option value="7. Bosa">7. Bosa</option>
+                            <option value="8. Kennedy">8. Kennedy</option>
+                            <option value="9. Fontibón">9. Fontibón</option>
+                            <option value="10. Engativá">10. Engativá</option>
+                            <option value="11. Suba">11. Suba</option>
+                            <option value="12. Barrios Unidos">12. Barrios Unidos</option>
+                            <option value="13. Teusaquillo">13. Teusaquillo</option>
+                            <option value="14. Los Mártires">14. Los Mártires</option>
+                            <option value="15. Antonio Nariño">15. Antonio Nariño</option>
+                            <option value="16. Puente Aranda">16. Puente Aranda</option>
+                            <option value="17. La Candelaria">17. La Candelaria</option>
+                            <option value="18. Rafael Uribe">18. Rafael Uribe</option>
+                            <option value="19. Ciudad Bolivar">19. Ciudad Bolivar</option>
+                            <option value="20. Sumapaz">20. Sumapaz</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label for="Barrio">Barrio:</label>
+                        <input class="form-control" placeholder="Barrio" type="text" name="Barrio" id="Barrio"/>
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label for="Correo">Correo Electronico:</label>
+                        <input class="form-control" placeholder="Correo Electronico" type="text" name="Correo" id="Correo"/>
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label for="Telefono">Telefono / Celular:</label>
+                        <input class="form-control" placeholder="Telefono / Celular" type="text" name="Telefono" id="Telefono"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-12 col-md-12 mb-3">
+                        <label for="Mensaje">Mensaje: *</label>
+                        <textarea name="Mensaje" id="Mensaje" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-check mb-3">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="condiciones" id="condiciones" class="form-check-input mr-2"/>Acepto terminos y condiciones
+                    </label>
+                </div>
+            </form>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-success float-right" data-toggle="modal" data-target="#samodal">Radicar PQRS</button>
+                        <div class="modal fade" id="samodal" tagindex="-1" role="dialog" area-label-ledby="samodal" aria-hudden="true" style="margin-top: 220px">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <h6 class="text-center">SU NUMERO DE RADICADO ES:</h6><br/>
+                                        <p class="text-center">"3578951246"</p>
+                                        <p class="text-center"> Gracias por preferir <br/> <strong style="color: #980505">Pastas Y Pizzas del Sur</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </ui:define>
+</ui:composition>
+

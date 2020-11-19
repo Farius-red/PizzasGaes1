@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    template="/WEB-INF/includes3/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="contenido">
+
+        <br/>        <br/>
+        <br/>
+        <br/>
+
+        <div class="jumbotron" style="background-image: url(#{request.contextPath}/resource/img/Quienessomos.jpg); background-size: 100%">
+            <h1 class="display-3 mb-3" style="font-family: Garamond; font-size: 40px; color: white; margin-top: 10px; margin-left: 120px;">PQRS</h1> 
+        </div>
+
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <br/>
+                    <div class="card" style="background: #980505; opacity: 0.9">
+                        <div class="card-body pqrs">
+                            <a href="RadicarPQRS.xhtml" style="text-decoration: none"><center><h3 class="card-tittle" style="font-family: Gabriola; font-size: 50px; color: white"><strong>Radicar PQRS </strong></h3></center></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <br/>
+                    <div class="card" style="background: #980505; opacity: 0.9">
+                        <div class="card-body pqrs">
+                            <a href="ConsultarPQRS.xhtml" style="text-decoration: none;"><center><h3 class="card-tittle" style="font-family: Gabriola; font-size: 50px; color: white"><strong>Consultar PQRS</strong></h3></center></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <hr style="background: green"/>
+            <h4>Petición:</h4>
+            <p>Es una actuación por medio de la cual el cliente, de manera respetuosa, solicita al restaurante cualquier información relacionada con la prestación del servicio. </p>
+            <hr style="background: green"/>
+            <h4>Queja:</h4>
+            <p>Es la expresión o manifestación que le hace el cliente al restaurante por la inconformidad que le generó la prestación de nuestros servicios.  </p>
+            <hr style="background: green"/>
+            <h4>Reclamo:</h4>
+            <p>Es la oposición o contrariedad presentada por el cliente, con el objeto de que el restaurante revise y evalúe una actuación relacionada con la prestación del servicio en términos económicos.  </p>
+            <hr style="background: green"/>
+            <h4>Sugerencia:</h4>
+            <p> Es una propuesta presentada por un cliente para incidir en el mejoramiento de un proceso de la empresa cuyo objeto está relacionado con la prestación del servicio.   </p>
+            <hr style="background: green"/>
+        </div>
+        <br/>
+        <br/>
+
+    </ui:define>
+</ui:composition>
+

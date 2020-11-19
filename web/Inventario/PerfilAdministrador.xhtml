@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="contenido">
+
+
+            <!-- /#header -->
+            <!-- Content -->
+            <div class="content">
+                <!-- Animated -->
+                <div class="animated fadeIn">
+                    <!-- Widgets  -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <aside class="profile-nav alt">
+                                <section class="card">
+                                    <div class="card-header user-header alt bg">
+                                        <div class="media">
+                                            <a href="#">
+                                                <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="#{request.contextPath}/resource/img/avatar/Perfil.jpg"/>
+                                            </a>
+                                            <div class="media-body">
+                                                <h2 class="text-light display-6">Ana Maria</h2>
+                                                <p class="perficolor">Administrador</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-header">
+                                        <strong>Datos Personales</strong>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                            <div class="row form-group">
+                                                <div class="col col-md-12"><label for="text-input" class=" form-control-label">Nombre:</label></div>
+                                                <div class="col-12 col-md-12"><input type="text" id="text-input" name="text-input" placeholder="Ana Maria" class="form-control"/></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-12"><label for="text-input" class=" form-control-label">Apellidos:</label></div>
+                                                <div class="col-12 col-md-12"><input type="text" id="text-input" name="text-input" placeholder="Lopez Leon" class="form-control"/></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-12"><label for="email-input" class=" form-control-label">Email:</label></div>
+                                                <div class="col-12 col-md-12"><input type="email" id="email-input" name="email-input" placeholder="Ana.lopez43@gmail.com" class="form-control"/></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-12"><label for="text-input" class=" form-control-label">Celular:</label></div>
+                                                <div class="col-12 col-md-12"><input type="text" id="text-input" name="text-input" placeholder="3193675863" class="form-control"/></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-12"><label for="text-input" class=" form-control-label">Usuario:</label></div>
+                                                <div class="col-12 col-md-12"><input type="text" id="text-input" name="text-input" placeholder="ADMIN001" class="form-control"/></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-12"><label for="password-input" class=" form-control-label">Contraseña:</label></div>
+                                                <div class="col-12 col-md-12"><input type="password" id="password-input" name="password-input" placeholder="*********" class="form-control"/></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-12 col-md-12" id="Añadir Producto">
+                                                    <button id="Añadir Producto" type="submit" class="btn btn-success btn-block">
+                                                        <span id="Añadir Producto">Actualizar</span>
+                                                    </button>
+                                                </div>
+                                            </div>    
+                                        </form>  
+                                    </div>
+                                </section>
+                            </aside>
+                        </div>
+
+                    </div>
+                    <!-- /#add-category -->
+                </div>
+                <!-- .animated -->
+            </div>
+       
+        <!-- /.content -->
+        <div class="clearfix"></div>
+
+    </ui:define>
+</ui:composition>
+

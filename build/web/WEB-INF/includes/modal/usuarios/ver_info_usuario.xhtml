@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <!-- modal mostrar usuarios-->
+    <div class="modal fade" id="verInfoUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h:panelGroup id="verInfoUsuarioContent" layout="block">
+                    <div class="modal-header" style="background-color: green">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="text-light" aria-hidden="true">&times;</span>
+                        </button>
+                        <span><center><img src="#{request.contextPath}/resource/img/LOgo.png" class="rounded-pill" target="_blank" style="height: 70px"/></center></span>             
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">ID:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.idUsuario}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">ROL:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.rol.descripcion}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">TIPO DE IDENTIFICACION:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.tipoIdentificación}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">NOMBRES:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.primerNombre} #{usuarioControlador.usuarioSeleccionado.segundoNombre}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">APELLIDOS:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.primerApellido} #{usuarioControlador.usuarioSeleccionado.segundoApellido}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">DIRECCION:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.direccion}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">EMAIL:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.email}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">TELEFONO:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.telefono}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">CONTRASEÑA:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.contraseña}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">ESTADO:</label>
+                            <span class="form-control">#{usuarioControlador.usuarioSeleccionado.estado}</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </h:panelGroup>
+            </div>
+        </div>
+    </div>
+</ui:composition>
+

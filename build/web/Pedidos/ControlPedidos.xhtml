@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <ui:define name="contenido">
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Control de Pedidos</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Pedidos</a></li>
+                                    <li class="active">Control de Pedidos</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white colorverde">
+                            <a class="hovcard" href="#Nuevos">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h3 class="mb-0 fw-r">
+                                            <span class="count">5</span>
+                                        </h3>
+                                        <p class="text-light mt-1 m-0 cardsordenpedido">Nuevos</p>
+                                    </div><!-- /.card-left -->
+
+                                    <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-magic-wand"></i>
+                                    </div><!-- /.card-right -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white coloramarillo">
+                            <a class="hovcard" href="#EnProceso">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h3 class="mb-0 fw-r">
+                                            <span class="count">5</span>
+                                        </h3>
+                                        <p class="text-light mt-1 m-0 cardsordenpedido">En Proceso</p>
+                                    </div><!-- /.card-left -->
+
+                                    <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-stopwatch"></i>
+                                    </div><!-- /.card-right -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white colorcancel">
+                            <a class="hovcard" href="#Anulados">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h3 class="mb-0 fw-r">
+                                            <span class="count">5</span>
+                                        </h3>
+                                        <p class="text-light mt-1 m-0 cardsordenpedido">Anulados</p>
+                                    </div><!--/.card-left -->
+
+                                    <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-junk"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white colorred">
+                            <a class="hovcard" href="#Finalizados">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h3 class="mb-0 fw-r">
+                                            <span class="count">5</span>
+                                        </h3>
+                                        <p class="text-light mt-1 m-0 cardsordenpedido">Finalizados</p>
+                                    </div><!-- /.card-left -->
+
+                                    <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-lock"></i>
+                                    </div><!-- /.card-right -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title" id="Nuevos">Nuevos</strong>
+                            </div>
+                            <div class="card-body">
+                                <h:form prependId="false">
+                                    <h:dataTable class="table table-striped" value="#{pedidosControlador.pedidos}"
+                                                 var="pedidos">
+                                        <h:column>
+                                            <f:facet name="header">ID:</f:facet>
+                                            <h:outputText value="#{pedidos.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">FECHA:</f:facet>
+                                            <h:outputText value="#{pedidos.fecha}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">CANTIDAD: </f:facet>
+                                            <h:outputText value="#{pedidos.cantidad}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Valor Unitario:</f:facet>
+                                            <h:outputText value="#{pedidos.valorUnitario}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">ESTADO:</f:facet>
+                                            <h:outputText value="#{pedidos.estado}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">OPCIONES:</f:facet>
+                                            <h:commandLink class="btn" style="color: whitesmoke; background: #03A900"  a:data-toggle="modal" a:data-target="#verInfoPedidos"
+                                                           action="#{pedidosControlador.seleccionarPedido(pedidos)}">
+                                                <i class="fa fa-eye"></i>
+                                                <f:ajax render=":verInfoPedidosContent"/>
+                                            </h:commandLink>
+                                            <a class="btn" style="color: #03A900; background: #E7CD13"><i class="fa fa-pencil"></i></a>
+                                            <a class="btn" style="color: whitesmoke; background: #D20000"><i class="fa fa-trash"></i></a>
+                                            <a class="btn" style="color: #03A900; background: #DFDFDF"><i class="fa fa-lock"></i></a>
+
+                                        </h:column>
+
+                                    </h:dataTable> 
+                                </h:form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#add-category -->
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- /.content -->
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title" id="EnProceso">En Proceso</strong>
+                </div>
+                <div class="card-body">
+                    <h:form prependId="false">
+                        <h:dataTable class="table table-striped" value="#{pedidosControlador.pedidos}"
+                                     var="pedidos">
+                            <h:column>
+                                <f:facet name="header">ID:</f:facet>
+                                <h:outputText value="#{pedidos.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">FECHA:</f:facet>
+                                <h:outputText value="#{pedidos.fecha}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">CANTIDAD: </f:facet>
+                                <h:outputText value="#{pedidos.cantidad}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Valor Unitario:</f:facet>
+                                <h:outputText value="#{pedidos.valorUnitario}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">ESTADO:</f:facet>
+                                <h:outputText value="#{pedidos.estado}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">OPCIONES:</f:facet>
+                                <h:commandLink class="btn" style="color: whitesmoke; background: #03A900"  a:data-toggle="modal" a:data-target="#verInfoPqrs"
+                                               action="#{pqrsControlador.seleccionarPqrs(pqrs)}">
+                                    <i class="fa fa-eye"></i>
+                                    <f:ajax render=":verInfoPqrsContent"/>
+                                </h:commandLink>
+                                <a class="btn" style="color: #03A900; background: #E7CD13"><i class="fa fa-pencil"></i></a>
+                                <a class="btn" style="color: whitesmoke; background: #D20000"><i class="fa fa-trash"></i></a>
+                                <a class="btn" style="color: #03A900; background: #DFDFDF"><i class="fa fa-lock"></i></a>
+
+                            </h:column>
+
+                        </h:dataTable> 
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <!-- /#add-category -->
+
+        <!-- .animated -->
+
+        <!-- /.content -->
+        <div class="clearfix"></div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title" id="Anulados">Anulados</strong>
+                </div>
+                <div class="card-body">
+                    <h:form prependId="false">
+                        <h:dataTable class="table table-striped" value="#{pedidosControlador.pedidos}"
+                                     var="pedidos">
+                            <h:column>
+                                <f:facet name="header">ID:</f:facet>
+                                <h:outputText value="#{pedidos.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">FECHA:</f:facet>
+                                <h:outputText value="#{pedidos.fecha}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">CANTIDAD: </f:facet>
+                                <h:outputText value="#{pedidos.cantidad}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Valor Unitario:</f:facet>
+                                <h:outputText value="#{pedidos.valorUnitario}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">ESTADO:</f:facet>
+                                <h:outputText value="#{pedidos.estado}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">OPCIONES:</f:facet>
+                                <h:commandLink class="btn" style="color: whitesmoke; background: #03A900"  a:data-toggle="modal" a:data-target="#verInfoPqrs"
+                                               action="#{pqrsControlador.seleccionarPqrs(pqrs)}">
+                                    <i class="fa fa-eye"></i>
+                                    <f:ajax render=":verInfoPqrsContent"/>
+                                </h:commandLink>
+                                <a class="btn" style="color: #03A900; background: #E7CD13"><i class="fa fa-pencil"></i></a>
+                                <a class="btn" style="color: whitesmoke; background: #D20000"><i class="fa fa-trash"></i></a>
+                                <a class="btn" style="color: #03A900; background: #DFDFDF"><i class="fa fa-lock"></i></a>
+
+                            </h:column>
+
+                        </h:dataTable> 
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title" id="Finalizados">Finalizados</strong>
+                </div>
+                <div class="card-body">
+                    <h:form prependId="false">
+                        <h:dataTable class="table table-striped" value="#{pedidosControlador.pedidos}"
+                                     var="pedidos">
+                            <h:column>
+                                <f:facet name="header">ID:</f:facet>
+                                <h:outputText value="#{pedidos.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">FECHA:</f:facet>
+                                <h:outputText value="#{pedidos.fecha}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">CANTIDAD: </f:facet>
+                                <h:outputText value="#{pedidos.cantidad}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Valor Unitario:</f:facet>
+                                <h:outputText value="#{pedidos.valorUnitario}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">ESTADO:</f:facet>
+                                <h:outputText value="#{pedidos.estado}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">OPCIONES:</f:facet>
+                                <h:commandLink class="btn" style="color: whitesmoke; background: #03A900"  a:data-toggle="modal" a:data-target="#verInfoPqrs"
+                                               action="#{pqrsControlador.seleccionarPqrs(pqrs)}">
+                                    <i class="fa fa-eye"></i>
+                                    <f:ajax render=":verInfoPqrsContent"/>
+                                </h:commandLink>
+                                <a class="btn" style="color: #03A900; background: #E7CD13"><i class="fa fa-pencil"></i></a>
+                                <a class="btn" style="color: whitesmoke; background: #D20000"><i class="fa fa-trash"></i></a>
+                                <a class="btn" style="color: #03A900; background: #DFDFDF"><i class="fa fa-lock"></i></a>
+
+                            </h:column>
+
+                        </h:dataTable> 
+                    </h:form>
+                    <ui:include src="/WEB-INF/includes/modal/pedidos/ver_info_pedidos.xhtml"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </ui:define>
+</ui:composition>
+

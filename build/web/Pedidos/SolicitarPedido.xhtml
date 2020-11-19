@@ -1,0 +1,489 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:define name="contenido">
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Nuevo Pedido</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Pedidos</a></li>
+                                    <li class="active">Nuevo Pedido</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Realice su Solicitud</strong>
+                            </div>
+                            <div class="card-body card-block">
+                                <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                     <div class="row form-group">
+                                        <div class="col col-md-2"><label for="disabled-input" class=" form-control-label">Usuario Solicitante:</label></div>
+                                        <div class="col-12 col-md-4"><input type="text" id="disabled-input" name="disabled-input" placeholder="ADMIN001" disabled="" class="form-control"/></div>
+                                        <div class="col col-md-2"><label for="disabled-input" class=" form-control-label">Sucursal:</label></div>
+                                        <div class="col-12 col-md-4"><input type="text" id="disabled-input" name="disabled-input" placeholder="Cr 88 # 94 - 55" disabled="" class="form-control"/></div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-2"><label for="disabled-input" class=" form-control-label">Fecha de Solicitud:</label></div>
+                                        <div class="col-12 col-md-4"><input type="text" id="disabled-input" name="disabled-input" placeholder="21/ENERO/2020" disabled="" class="form-control"/></div>
+                                        <div class="col col-md-2"><label for="disabled-input" class=" form-control-label">Hora de Solicitud:</label></div>
+                                        <div class="col-12 col-md-4"><input type="text" id="disabled-input" name="disabled-input" placeholder="20:45" disabled="" class="form-control"/></div>
+                                    </div>
+                                   
+                                    <div class="row form-group">
+                                        <div class="col col-md-2"><label for="select" class=" form-control-label">Tipo de Pedido:</label></div>
+                                        <div class="col-12 col-md-10">
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="tipo de pedido">Seleccione un tipo de pedido</option>
+                                                <option value="Domicilio">Domicilio</option>
+                                                <option value="Para Llevar">Para Llevar </option>
+                                                <option value="En Restaurante">En Restaurante</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-2"><label for="select" class=" form-control-label">Lugar de Entrega:</label></div>
+                                        <div class="col-12 col-md-4">
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="tipo de pedido">Seleccione un lugar de entrega</option>
+                                                <option value="Domicilio">Dirección</option>
+                                                <option value="Para Llevar">En sala de espera </option>
+                                                <option value="En Restaurante">Mesa # 1</option>
+                                                <option value="En Restaurante">Mesa # 2</option>
+                                                <option value="En Restaurante">Mesa # 3</option>
+                                                <option value="En Restaurante">Mesa # 4</option>
+                                                <option value="En Restaurante">Mesa # 5</option>
+                                                <option value="En Restaurante">Mesa # 6</option>
+                                                <option value="En Restaurante">Mesa # 7</option>
+                                                <option value="En Restaurante">Mesa # 8</option>
+                                                <option value="En Restaurante">Mesa # 9</option>
+                                                <option value="En Restaurante">Mesa # 10</option>
+                                                <option value="En Restaurante">Mesa # 11</option>
+                                                <option value="En Restaurante">Mesa # 12</option>
+                                            </select>
+                                        </div>
+                                        <div class="col col-md-2"><label for="select" class=" form-control-label">Detalle de Entrega:</label></div>
+                                        <div class="col-12 col-md-4"><input type="text" id="text-input" name="text-input" placeholder="Complemente la info de entrega" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-2"><label for="select" class="form-control-label">Productos:</label></div>
+                                        <div class="col-12 col-md-10">
+                                            <select name="select" id="select" class="form-control">
+                                                <optgroup label="LASAGNAS">
+                                                    <option value="0">Seleccione un producto</option>
+                                                    <option value="001">001 - Lasagna Especial</option>
+                                                    <option value="002">002 - Lasagna Jr.Especial</option>
+                                                    <option value="003">003 - Lasagna Mexicana</option>
+                                                    <option value="003">004 - Lasagna Vegetariana</option>
+                                                    <option value="004">005 - Lasagna Mixta 1</option>
+                                                    <option value="005">006 - Lasagna Jr.Mixta 1</option>
+                                                    <option value="006">007 - Lasagna Mixta 2</option>
+                                                    <option value="007">008 - Lasagna Jr.Mixta 2</option>
+                                                    <option value="008">009 - Lasagna Boloñesa</option>
+                                                    <option value="009">010 - Lasagna Jr.Boloñesa</option>
+                                                    <option value="010">011 - Lasagna Pollo</option>
+                                                    <option value="011">012 - Lasagna Jr.Pollo</option>
+                                                </optgroup>
+                                                <optgroup label="SPAGETTIS">
+                                                    <option value="013">013 - Spaguetti Especial</option>
+                                                    <option value="014">014 - Spaguetti Jr.Especial</option>
+                                                    <option value="015">015 - Spaguetti Carbonara</option>
+                                                    <option value="016">016 - Spaguetti Vegetariano</option>
+                                                    <option value="017">017 - Spaguetti Mixto 1</option>
+                                                    <option value="018">018 - Spaguetti Jr.Mixto 1</option>
+                                                    <option value="019">019 - Spaguetti Mixto 2</option>
+                                                    <option value="020">020 - Spaguetti Jr.Mixto 2</option>
+                                                    <option value="021">021 - Spaguetti Boloñes</option>
+                                                    <option value="022">022 - Spaguetti Jr.Boloñes</option>
+                                                    <option value="023">023 - Spaguetti Pollo</option>
+                                                    <option value="024">024 - Spaguetti Jr.Pollo</option>
+                                                </optgroup>
+                                                <optgroup label="RAVIOLIS">
+                                                    <option value="025">025 - Ravioli Especial</option>
+                                                    <option value="026">026 - Ravioli Jr.Especial</option>
+                                                    <option value="027">027 - Ravioli Carbonara</option>
+                                                    <option value="028">028 - Ravioli Mixto 1</option>
+                                                    <option value="029">029 - Ravioli Jr.Mixto 1</option>
+                                                    <option value="030">030 - Ravioli Mixto 2</option>
+                                                    <option value="031">031 - Ravioli Jr.Mixto 2</option>
+                                                    <option value="032">032 - Ravioli Boloñes</option>
+                                                    <option value="033">033 - Ravioli Jr.Boloñes</option>
+                                                    <option value="034">034 - Ravioli Pollo</option>
+                                                    <option value="035">035 - Ravioli Jr.Pollo</option>
+                                                </optgroup>
+                                                <optgroup label="PLATOS A LA CARTA">
+                                                    <option value="036">036 - Pechuga en Salsa de Champiñones</option>
+                                                    <option value="037">037 - Pechuga Ranchera</option>
+                                                    <option value="038">038 - Pechuga a la Plancha</option>
+                                                    <option value="039">039 - Costillitas en Salsa BBQ</option>
+                                                    <option value="040">040 - Churrasco 350grs</option>
+                                                    <option value="041">041 - Carne a la Plancha</option>
+                                                    <option value="042">042 - Lomo de Cerdo</option>
+                                                </optgroup>
+                                                <optgroup label="PA PICAR">
+                                                    <option value="043">043 - Coctel Ranchero</option>
+                                                    <option value="044">044 - Salchipapa</option>
+                                                    <option value="045">045 - Huevos de Codorniz (7)</option>
+                                                    <option value="046">046 - Papa a la Francesa</option>
+                                                    <option value="047">047 - Porción de Queso Parmesano</option>
+                                                    <option value="048">048 - Porción de Pan de Ajo</option>
+                                                </optgroup>
+                                                <optgroup label="HAMBURGUESAS">
+                                                    <option value="049">049 - Hamburguesa Carne Sencilla</option>
+                                                    <option value="050">050 - Hamburguesa Carne Especial</option>
+                                                    <option value="051">051 - Hamburguesa Pollo Sencilla</option>
+                                                    <option value="052">052 - Hamburguesa Pollo Especial</option>
+                                                    <option value="053">053 - Hamburguesa Doble</option>
+                                                </optgroup>
+                                                <optgroup label="HOT DOG">
+                                                    <option value="054">054 - Hot Dog Americano</option>
+                                                    <option value="055">055 - Hot Dog Sencillo</option>
+                                                </optgroup>
+                                                <optgroup label="PIZZA POR PORCION">
+                                                    <option value="056">056 - Pizza Porción Especial</option>
+                                                    <option value="057">057 - Pizza Porción Hawaiana</option>
+                                                    <option value="058">058 - Pizza Porción Carnes</option>
+                                                    <option value="059">059 - Pizza Porción Mexicana</option>
+                                                    <option value="060">060 - Pizza Porción Criolla</option>
+                                                    <option value="061">061 - Pizza Porción Tropical</option>
+                                                </optgroup>
+                                                <optgroup label="PIZZA PERSONAL">
+                                                    <option value="062">062 - Pizza Personal Especial</option>
+                                                    <option value="063">063 - Pizza Personal Hawaiana</option>
+                                                    <option value="064">064 - Pizza Personal Carnes</option>
+                                                    <option value="065">065 - Pizza Personal Mexicana</option>
+                                                    <option value="066">066 - Pizza Personal Criolla</option>
+                                                    <option value="067">067 - Pizza Personal Tropical</option>
+                                                    <option value="068">068 - Pizza Personal Veleña</option>
+                                                    <option value="069">069 - Pizza Personal Vegetariana</option>
+                                                    <option value="070">070 - Pizza Personal Especial/Hawaiana</option>
+                                                    <option value="071">071 - Pizza Personal Especial/Carnes</option>
+                                                    <option value="072">072 - Pizza Personal Especial/Mexicana</option>
+                                                    <option value="073">073 - Pizza Personal Especial/Criolla</option>
+                                                    <option value="074">074 - Pizza Personal Especial/Tropical</option>
+                                                    <option value="075">075 - Pizza Personal Especial/Veleña</option>
+                                                    <option value="076">076 - Pizza Personal Especial/Vegetariana</option>
+                                                    <option value="077">077 - Pizza Personal Hawaiana/Carnes</option>
+                                                    <option value="078">078 - Pizza Personal Hawaiana/Mexicana</option>
+                                                    <option value="079">079 - Pizza Personal Hawaiana/Criolla</option>
+                                                    <option value="080">080 - Pizza Personal Hawaiana/Tropical</option>
+                                                    <option value="081">081 - Pizza Personal Hawaiana/Veleña</option>
+                                                    <option value="082">082 - Pizza Personal Hawaiana/Vegetariana</option>
+                                                    <option value="083">083 - Pizza Personal Carnes/Mexicana</option>
+                                                    <option value="084">084 - Pizza Personal Carnes/Criolla</option>
+                                                    <option value="085">085 - Pizza Personal Carnes/Tropical</option>
+                                                    <option value="086">086 - Pizza Personal Carnes/Veleña</option>
+                                                    <option value="087">087 - Pizza Personal Carnes/Vegetariana</option>
+                                                    <option value="088">088 - Pizza Personal Mexicana/Criolla</option>
+                                                    <option value="089">089 - Pizza Personal Mexicana/Tropical</option>
+                                                    <option value="090">090 - Pizza Personal Mexicana/Veleña</option>
+                                                    <option value="091">091 - Pizza Personal Mexicana/Vegetariana</option>
+                                                    <option value="092">092 - Pizza Personal Criolla/Tropical</option>
+                                                    <option value="093">093 - Pizza Personal Criolla/Veleña</option>
+                                                    <option value="094">094 - Pizza Personal Criolla/Vegetariana</option>
+                                                    <option value="095">095 - Pizza Personal Tropical/Veleña</option>
+                                                    <option value="096">096 - Pizza Personal Tropical/Vegetariana</option>
+                                                    <option value="097">097 - Pizza Personal Veleña/Vegetariana</option>
+                                                </optgroup>
+                                                <optgroup label="PIZZA SMALL">
+                                                    <option value="062">098 - Pizza Small Especial</option>
+                                                    <option value="063">099 - Pizza Small Hawaiana</option>
+                                                    <option value="064">100 - Pizza Small Carnes</option>
+                                                    <option value="065">101 - Pizza Small Mexicana</option>
+                                                    <option value="066">102 - Pizza Small Criolla</option>
+                                                    <option value="067">103 - Pizza Small Tropical</option>
+                                                    <option value="068">104 - Pizza Small Veleña</option>
+                                                    <option value="069">105 - Pizza Small Vegetariana</option>
+                                                    <option value="070">106 - Pizza Small Especial/Hawaiana</option>
+                                                    <option value="071">107 - Pizza Small Especial/Carnes</option>
+                                                    <option value="072">108 - Pizza Small Especial/Mexicana</option>
+                                                    <option value="073">109 - Pizza Small Especial/Criolla</option>
+                                                    <option value="074">110 - Pizza Small Especial/Tropical</option>
+                                                    <option value="075">111 - Pizza Small Especial/Veleña</option>
+                                                    <option value="076">112 - Pizza Small Especial/Vegetariana</option>
+                                                    <option value="077">113 - Pizza Small Hawaiana/Carnes</option>
+                                                    <option value="078">114 - Pizza Small Hawaiana/Mexicana</option>
+                                                    <option value="079">115 - Pizza Small Hawaiana/Criolla</option>
+                                                    <option value="080">116 - Pizza Small Hawaiana/Tropical</option>
+                                                    <option value="081">117 - Pizza Small Hawaiana/Veleña</option>
+                                                    <option value="082">118 - Pizza Small Hawaiana/Vegetariana</option>
+                                                    <option value="083">119 - Pizza Small Carnes/Mexicana</option>
+                                                    <option value="084">120 - Pizza Small Carnes/Criolla</option>
+                                                    <option value="085">121 - Pizza Small Carnes/Tropical</option>
+                                                    <option value="086">122 - Pizza Small Carnes/Veleña</option>
+                                                    <option value="087">123 - Pizza Small Carnes/Vegetariana</option>
+                                                    <option value="088">124 - Pizza Small Mexicana/Criolla</option>
+                                                    <option value="089">125 - Pizza Small Mexicana/Tropical</option>
+                                                    <option value="090">126 - Pizza Small Mexicana/Veleña</option>
+                                                    <option value="091">127 - Pizza Small Mexicana/Vegetariana</option>
+                                                    <option value="092">128 - Pizza Small Criolla/Tropical</option>
+                                                    <option value="093">129 - Pizza Small Criolla/Veleña</option>
+                                                    <option value="094">130 - Pizza Small Criolla/Vegetariana</option>
+                                                    <option value="095">131 - Pizza Small Tropical/Veleña</option>
+                                                    <option value="096">132 - Pizza Small Tropical/Vegetariana</option>
+                                                    <option value="097">133 - Pizza Small Veleña/Vegetariana</option>
+                                                </optgroup>
+                                                <optgroup label="PIZZA MEDIANA">
+                                                    <option value="062">134 - Pizza Mediana Especial</option>
+                                                    <option value="063">135 - Pizza Mediana Hawaiana</option>
+                                                    <option value="064">136 - Pizza Mediana Carnes</option>
+                                                    <option value="065">137 - Pizza Mediana Mexicana</option>
+                                                    <option value="066">138 - Pizza Mediana Criolla</option>
+                                                    <option value="067">139 - Pizza Mediana Tropical</option>
+                                                    <option value="068">140 - Pizza Mediana Veleña</option>
+                                                    <option value="069">141 - Pizza Mediana Vegetariana</option>
+                                                    <option value="070">142 - Pizza Mediana Especial/Hawaiana</option>
+                                                    <option value="071">143 - Pizza Mediana Especial/Carnes</option>
+                                                    <option value="072">144 - Pizza Mediana Especial/Mexicana</option>
+                                                    <option value="073">145 - Pizza Mediana Especial/Criolla</option>
+                                                    <option value="074">146 - Pizza Mediana Especial/Tropical</option>
+                                                    <option value="075">147 - Pizza Mediana Especial/Veleña</option>
+                                                    <option value="076">148 - Pizza Mediana Especial/Vegetariana</option>
+                                                    <option value="077">149 - Pizza Mediana Hawaiana/Carnes</option>
+                                                    <option value="078">150 - Pizza Mediana Hawaiana/Mexicana</option>
+                                                    <option value="079">151 - Pizza Mediana Hawaiana/Criolla</option>
+                                                    <option value="080">152 - Pizza Mediana Hawaiana/Tropical</option>
+                                                    <option value="081">153 - Pizza Mediana Hawaiana/Veleña</option>
+                                                    <option value="082">154 - Pizza Mediana Hawaiana/Vegetariana</option>
+                                                    <option value="083">155 - Pizza Mediana Carnes/Mexicana</option>
+                                                    <option value="084">156 - Pizza Mediana Carnes/Criolla</option>
+                                                    <option value="085">157 - Pizza Mediana Carnes/Tropical</option>
+                                                    <option value="086">158 - Pizza Mediana Carnes/Veleña</option>
+                                                    <option value="087">159 - Pizza Mediana Carnes/Vegetariana</option>
+                                                    <option value="088">160 - Pizza Mediana Mexicana/Criolla</option>
+                                                    <option value="089">161 - Pizza Mediana Mexicana/Tropical</option>
+                                                    <option value="090">162 - Pizza Mediana Mexicana/Veleña</option>
+                                                    <option value="091">163 - Pizza Mediana Mexicana/Vegetariana</option>
+                                                    <option value="092">164 - Pizza Mediana Criolla/Tropical</option>
+                                                    <option value="093">165 - Pizza Mediana Criolla/Veleña</option>
+                                                    <option value="094">166 - Pizza Mediana Criolla/Vegetariana</option>
+                                                    <option value="095">167 - Pizza Mediana Tropical/Veleña</option>
+                                                    <option value="096">168 - Pizza Mediana Tropical/Vegetariana</option>
+                                                    <option value="097">169 - Pizza Mediana Veleña/Vegetariana</option>
+                                                </optgroup>
+                                                <optgroup label="PIZZA FAMILIAR">
+                                                    <option value="062">170 - Pizza XL Especial</option>
+                                                    <option value="063">171 - Pizza XL Hawaiana</option>
+                                                    <option value="064">172 - Pizza XL Carnes</option>
+                                                    <option value="065">173 - Pizza XL Mexicana</option>
+                                                    <option value="066">174 - Pizza XL Criolla</option>
+                                                    <option value="067">175 - Pizza XL Tropical</option>
+                                                    <option value="068">176 - Pizza XL Veleña</option>
+                                                    <option value="069">177 - Pizza XL Vegetariana</option>
+                                                    <option value="070">178 - Pizza XL Especial/Hawaiana</option>
+                                                    <option value="071">179 - Pizza XL Especial/Carnes</option>
+                                                    <option value="072">180 - Pizza XL Especial/Mexicana</option>
+                                                    <option value="073">181 - Pizza XL Especial/Criolla</option>
+                                                    <option value="074">182 - Pizza XL Especial/Tropical</option>
+                                                    <option value="075">183 - Pizza XL Especial/Veleña</option>
+                                                    <option value="076">184 - Pizza XL Especial/Vegetariana</option>
+                                                    <option value="077">185 - Pizza XL Hawaiana/Carnes</option>
+                                                    <option value="078">186 - Pizza XL Hawaiana/Mexicana</option>
+                                                    <option value="079">187 - Pizza XL Hawaiana/Criolla</option>
+                                                    <option value="080">188 - Pizza XL Hawaiana/Tropical</option>
+                                                    <option value="081">189 - Pizza XL Hawaiana/Veleña</option>
+                                                    <option value="082">190 - Pizza XL Hawaiana/Vegetariana</option>
+                                                    <option value="083">191 - Pizza XL Carnes/Mexicana</option>
+                                                    <option value="084">192 - Pizza XL Carnes/Criolla</option>
+                                                    <option value="085">193 - Pizza XL Carnes/Tropical</option>
+                                                    <option value="086">194 - Pizza XL Carnes/Veleña</option>
+                                                    <option value="087">195 - Pizza XL Carnes/Vegetariana</option>
+                                                    <option value="088">196 - Pizza XL Mexicana/Criolla</option>
+                                                    <option value="089">197 - Pizza XL Mexicana/Tropical</option>
+                                                    <option value="090">198 - Pizza XL Mexicana/Veleña</option>
+                                                    <option value="091">199 - Pizza XL Mexicana/Vegetariana</option>
+                                                    <option value="092">200 - Pizza XL Criolla/Tropical</option>
+                                                    <option value="093">201 - Pizza XL Criolla/Veleña</option>
+                                                    <option value="094">202 - Pizza XL Criolla/Vegetariana</option>
+                                                    <option value="095">203 - Pizza XL Tropical/Veleña</option>
+                                                    <option value="096">204 - Pizza XL Tropical/Vegetariana</option>
+                                                    <option value="097">205 - Pizza XL Veleña/Vegetariana</option>
+                                                </optgroup>
+                                                <optgroup label="PANSEROTTIS">
+                                                    <option value="056">206 - Panserotti Especial</option>
+                                                    <option value="057">207 - Panserotti Hawaiano</option>
+                                                    <option value="058">208 - Panserotti Carnes</option>
+                                                    <option value="059">209 - Panserotti Mexicano</option>
+                                                    <option value="060">210 - Panserotti Criollo</option>
+                                                    <option value="061">211 - Panserotti Tropical</option>
+                                                </optgroup>
+                                                <optgroup label="BEBIDAS">
+                                                    <option value="056">212 - Gaseosa Mini</option>
+                                                    <option value="057">213 - Gaseosa 350ml</option>
+                                                    <option value="058">214 - Gaseosa 400ml</option>
+                                                    <option value="059">215 - Gaseosa 600ml</option>
+                                                    <option value="060">216 - Gaseosa 1.5ml</option>
+                                                    <option value="061">217 - Hit 10oz</option>
+                                                    <option value="056">218 - Hit 500ml</option>
+                                                    <option value="057">219 - Gatorade</option>
+                                                    <option value="058">220 - Gaseosa Lata</option>
+                                                    <option value="059">221 - Agua en Botella</option>
+                                                    <option value="060">222 - Nectar California 10oz</option>
+                                                    <option value="061">223 - Nectar California Litro</option>
+                                                    <option value="057">224 - Poker Lata</option>
+                                                    <option value="058">225 - Club Colombia Lata</option>
+                                                    <option value="059">226 - Cerveza Importada</option>
+                                                    <option value="060">227 - Cerveza Artesanal</option>
+                                                </optgroup>    
+                                            </select>  
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-2"><label for="select" class=" form-control-label">Cantidad:</label></div>
+                                        <div class="col-12 col-md-4" id="Raiz-Cantidad">
+                                            <div class="input-group bootstrap-touchspin">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default bootstrap-touchspin-down"  type="button" onclick="restar()">-</button>
+                                                </span>
+                                                <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;">
+                                                </span>
+                                                <input type="text" name="cantidad" id="cantidad" class="form-control" value= "1"/>
+                                                <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;">
+                                                </span>
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default bootstrap-touchspin-up" type="button" onclick="sumar()">+</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-1"><label for="select" class=" form-control-label"></label></div>
+                                        <div class="col-12 col-md-5" id="Añadir Producto">
+                                            <button id="Añadir Producto" type="submit" class="btn btn-success btn-block">
+                                                <span id="Añadir Producto">Añadir Producto</span>
+                                            </button>
+                                        </div>
+                                    </div>       
+                                </form>
+                                <div class="table-stats order-table ov-h">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th class="serial">Id Producto</th>
+                                            <th>Producto</th>
+                                            <th>Cantidad</th>
+                                            <th>Usuario Solicitante</th>
+                                            <th>Tipo de Pedido</th>
+                                            <th>Lugar de Entrega</th>
+                                            <th>Valor Und.</th>
+                                            <th>Valor Total</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="serial">013</td>
+                                            <td> <span class="product">Spaguetti Especial</span></td>
+                                            <td>3</td>
+                                            <td>ADMIN001</td>
+                                            <td>En restaurante</td>
+                                            <td>Mesa # 1</td>
+                                            <td>16.400 $</td>
+                                            <td>49.200 $</td>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="serial">001</td>
+                                            <td> <span class="product">Lasagna Especial</span></td>
+                                            <td>1</td>
+                                            <td>ADMIN001</td>
+                                            <td>En restaurante</td>
+                                            <td>Mesa # 1</td>
+                                            <td>17.800 $</td>
+                                            <td>17.800 $</td>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="serial">059</td>
+                                            <td> <span class="product">Pizza porción Hawaiana</span></td>
+                                            <td>2</td>
+                                            <td>ADMIN001</td>
+                                            <td>En restaurante</td>
+                                            <td>Mesa # 1</td>
+                                            <td>5.600 $</td>
+                                            <td>16.800 $</td>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="serial">040</td>
+                                            <td> <span class="product">Churrasco 350grs.</span></td>
+                                            <td>1</td>
+                                            <td>ADMIN001</td>
+                                            <td>En restaurante</td>
+                                            <td>Mesa # 1</td>
+                                            <td>19.800 $</td>
+                                            <td>19.800 $</td>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="serial"></td>
+                                            <td> <span class="product"></span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>103.600 $</td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                                <div class="card-body card-block">
+                                <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-12"><label for="textarea-input" class=" form-control-label">Observaciones:</label></div>
+                                        <div class="col-12 col-md-12"><textarea name="Observación pedidos" id="Observación pedidos" rows="5" placeholder="Escriba su observación" class="form-control"></textarea></div>
+                                    </div>
+                                    <div class="row form-group">
+                                    <div class="col-12 col-md-12" id="Añadir Producto">
+                                        <button id="Enviar Pedido" type="submit" class="btn btn-success btn-block">
+                                            <span id="Enviar Pedido">Enviar Pedido</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                </form>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <!-- .content -->
+    <div class="clearfix"></div>
+    </ui:define>
+</ui:composition>
+

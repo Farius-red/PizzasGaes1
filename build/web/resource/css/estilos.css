@@ -1,0 +1,271 @@
+body {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 40px;
+}
+
+.navbar{
+	background-color: #067E1C;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+	min-height: 100px;
+}
+.nav-link{ 
+	color: white;
+	margin-left: 30px;
+}
+
+.nav-link:hover {color: yellow;}
+
+.navbar{
+	box-shadow: 2px 2px 5px #067E1C;
+	opacity: .9;
+}
+.logo-brand{
+	min-width: 160px;
+	max-width: 180px;
+	margin-left: 120px;
+}
+.navbar-toggler{
+	font-size: 40px;
+}
+.navbar-toggler:focus{
+	outline: none;
+}
+
+.galeria{
+	width: 1500px;
+	height: 600px;
+	margin-left: px;
+	margin-bottom: 30px;
+	object-fit: fill;
+}
+ .iconos{
+ 	margin-top: -30px;
+ 	margin-right: -20px;
+ }
+ .iconos2{
+ 	margin-top: -35px;
+ 	
+ }
+.desplagable:hover{
+	color: red;
+
+}
+.carta{
+
+	color: black;
+	border: 1px solid black;
+	background: none;
+	padding: 5px 15px;
+	font-size: 16px;
+	font-family: monserrat;
+	cursor: pointer;
+	margin:10px;
+	transition:0.8s;
+	
+}
+.carta:hover{
+		color: #55C23F;
+		border: 1px solid #55C23F ;
+}
+
+.pqrs:hover{
+
+	background: #D84B4B;
+}
+.main:hover{
+
+	background: #F6F6F6;
+}
+#cargando {
+    display: none;
+}
+
+/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+body {
+	background: #F1F3FA;
+  }
+  
+  /* Profile container */
+  .profile {
+	margin: 20px 0;
+  }
+  
+  /* Profile sidebar */
+  .profile-sidebar {
+	padding: 20px 0 10px 0;
+	background: #fff;
+  }
+  
+  .profile-userpic img {
+	float: none;
+	margin: 0 auto;
+	width: 50%;
+	height: 50%;
+	-webkit-border-radius: 50% !important;
+	-moz-border-radius: 50% !important;
+	border-radius: 50% !important;
+  }
+  
+  .profile-usertitle {
+	text-align: center;
+	margin-top: 20px;
+  }
+  
+  .profile-usertitle-name {
+	color: #5a7391;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 7px;
+  }
+  
+  .profile-usertitle-job {
+	text-transform: uppercase;
+	color: #5b9bd1;
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 15px;
+  }
+  
+  .profile-userbuttons {
+	text-align: center;
+	margin-top: 10px;
+  }
+  
+  .profile-userbuttons .btn {
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 6px 15px;
+	margin-right: 5px;
+  }
+  
+  .profile-userbuttons .btn:last-child {
+	margin-right: 0px;
+  }
+	  
+  .profile-usermenu {
+	margin-top: 30px;
+  }
+  
+  .profile-usermenu ul li {
+	border-bottom: 1px solid #f0f4f7;
+  }
+  
+  .profile-usermenu ul li:last-child {
+	border-bottom: none;
+  }
+  
+  .profile-usermenu ul li a {
+	color: #93a3b5;
+	font-size: 14px;
+	font-weight: 400;
+  }
+  
+  .profile-usermenu ul li a i {
+	margin-right: 8px;
+	font-size: 14px;
+  }
+  
+  .profile-usermenu ul li a:hover {
+	background-color: #fafcfd;
+	color: #5b9bd1;
+  }
+  
+  .profile-usermenu ul li.active {
+	border-bottom: none;
+  }
+  
+  .profile-usermenu ul li.active a {
+	color: #5b9bd1;
+	background-color: #f6f9fb;
+	border-left: 2px solid #5b9bd1;
+	margin-left: -2px;
+  }
+  
+  /* Profile Content */
+  .profile-content {
+	padding: 20px;
+	background: #fff;
+	min-height: 460px;
+  }
+
+/* TEMPLATE */
+  .form-check,
+  label {
+	font-size: 14px;
+	line-height: 1.42857;
+	color: black;
+	font-weight: 400;
+	
+  }
+  
+  .card {
+	border: 0;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	border-radius: 6px;
+	color: #333333;
+	background: #fff;
+	width: 100%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .card .card-header-primary .card-icon,
+  .card .card-header-primary .card-text,
+  .card .card-header-primary:not(.card-header-icon):not(.card-header-text),
+  .card.bg-primary,
+  .card.card-rotate.bg-primary .front,
+  .card.card-rotate.bg-primary .back {
+	background: linear-gradient(60deg, #067E1C, #067E1C);
+  }
+  
+  .card [class*="card-header-"] .card-title a,
+  .card [class*="card-header-"] .card-title,
+  .card [class*="card-header-"] .icon i,
+  .card[class*="bg-"] .card-title a,
+  .card[class*="bg-"] .card-title,
+  .card[class*="bg-"] .icon i {
+	color: #fff;
+  }
+
+  .card [class*="card-header-"] {
+	margin: 0px 15px 0;
+	padding: 0;
+	position: relative;
+  }
+  .card [class*="card-header-"]:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
+	border-radius: 3px;
+	margin-top: -20px;
+	padding: 15px;
+  }
+
+  .card-profile {
+	margin-top: 70px;
+	text-align: center;
+	font-family: Asleepytiming;
+	color: #807070;
+  }
+  
+  .card-profile .card-avatar {
+	margin: -50px auto 0;
+	border-radius: 50%;
+	overflow: hidden;
+	padding: 0;
+	box-shadow: 0 20px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-profile .card-avatar img {
+	width: 100%;
+	height: auto;
+  }
+  
+  .card-profile .card-avatar {
+	max-width: 130px;
+	max-height: 130px;
+  }
+ 

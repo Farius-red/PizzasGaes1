@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="contenido">
+        <div class="content">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white colorverde">
+                            <a class="hovcard" href="#bebidas">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h4 class="mb-0 fw-r">
+                                            <span>Bebidas</span>
+                                        </h4>
+                                    </div><!-- /.card-left -->
+
+                                    <!-- <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-magic-wand"></i>
+                                    </div> --><!-- /.card-right -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white coloramarillo">
+                            <a class="hovcard" href="#carnes">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h4 class="mb-0 fw-r">
+                                            <span>Carnes</span>
+                                        </h4>
+                                    </div><!-- /.card-left -->
+
+                                    <!-- <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-stopwatch"></i>
+                                    </div> --><!-- /.card-right -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white colorcancel">
+                            <a class="hovcard" href="#harinas">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h4 class="mb-0 fw-r">
+                                            <span>Harinas</span>
+                                        </h4>
+                                    </div><!-- /.card-left -->
+
+                                    <!-- <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-junk"></i>
+                                    </div> --><!-- /.card-right -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white colorred">
+                            <a class="hovcard" href="#verduras">
+                                <div class="card-body">
+                                    <div class="card-left pt-1 float-left">
+                                        <h4 class="mb-0 fw-r">
+                                            <span>Verduras</span>
+                                        </h4>
+                                    </div><!-- /.card-left -->
+
+                                    <!-- <div class="card-right float-right text-right">
+                                        <i class="icon fade-5 icon-lg pe-7s-lock"></i>
+                                    </div> --><!-- /.card-right -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+
+                </div>
+                <!-- /#add-category -->
+            </div>
+            <!-- .animated -->
+        </div>
+        <h:form prependId="false">
+            <center><a class="btn btn-success" href="RegistroInsumo.xhtml"><i class="fa fa-plus">Registrar Nuevo Insumo</i></a></center>
+            <br/>
+            <h6 class="text-center"><b>INVENTARIO GENERAL</b></h6>
+            <br/>
+            <p:dataTable class="table table-striped" value="#{inventarioControlador.insumos}" 
+                         rows="10"
+                         paginator="true"
+                         rowsPerPageTemplate="5,10,15"
+                         reflow="true"
+                         var="insu">
+
+                <p:column headerText="ID" priority="2">
+                    <h:outputText value="#{insu.id}"/>
+                </p:column>
+                <p:column headerText="NOMBRE" priority="2">
+                    <h:outputText value="#{insu.nombre}"/>
+                </p:column>
+                <p:column headerText="CANTIDAD" priority="2">
+                    <h:outputText value="#{insu.cantidad} "/>
+                </p:column>
+                <p:column headerText="ESTADO" priority="2">
+                    <h:outputText value="#{insu.estado} "/>
+                </p:column>
+                <p:column headerText="OPCIONES" priority="2">
+                    <h:commandLink class="btn btn-primary" a:data-toggle="modal" a:data-target="#verInfoInsumo"
+                                   action="#{inventarioControlador.seleccionarInsumo(insu)}">
+                        <i class="fa fa-eye"></i>
+                        <f:ajax render=":verInfoInsumoContent" />
+                    </h:commandLink>
+                    <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                    <a class="btn btn-info"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger"><i class="fa fa-lock"></i></a>
+
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+        <h:form prependId="false">
+            <center><a class="btn btn-success" href="RegistroInsumo.xhtml"><i class="fa fa-plus">Registrar Nuevo Insumo</i></a></center>
+            <br/>
+            <h6 class="text-center" id="bebidas"><b>BEBIDAS</b></h6>
+            <br/>
+            <p:dataTable class="table table-striped" value="#{inventarioControlador.insumos}" 
+                         rows="10"
+                         paginator="true"
+                         rowsPerPageTemplate="5,10,15"
+                         reflow="true"
+                         var="insu">
+
+                <p:column headerText="ID" priority="2">
+                    <h:outputText value="#{insu.id}"/>
+                </p:column>
+                <p:column headerText="NOMBRE" priority="2">
+                    <h:outputText value="#{insu.nombre}"/>
+                </p:column>
+                <p:column headerText="CANTIDAD" priority="2">
+                    <h:outputText value="#{insu.cantidad} "/>
+                </p:column>
+                <p:column headerText="ESTADO" priority="2">
+                    <h:outputText value="#{insu.estado} "/>
+                </p:column>
+                <p:column headerText="OPCIONES" priority="2">
+                    <h:commandLink class="btn btn-primary" a:data-toggle="modal" a:data-target="#verInfoInsumo"
+                                   action="#{inventarioControlador.seleccionarInsumo(insu)}">
+                        <i class="fa fa-eye"></i>
+                        <f:ajax render=":verInfoInsumoContent" />
+                    </h:commandLink>
+                    <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                    <a class="btn btn-info"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger"><i class="fa fa-lock"></i></a>
+
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        
+                <h:form prependId="false">
+            <center><a class="btn btn-success" href="RegistroInsumo.xhtml"><i class="fa fa-plus">Registrar Nuevo Insumo</i></a></center>
+            <br/>
+            <h6 class="text-center" id="carnes"><b>CARNES</b></h6>
+            <br/>
+            <p:dataTable class="table table-striped" value="#{inventarioControlador.insumos}" 
+                         rows="10"
+                         paginator="true"
+                         rowsPerPageTemplate="5,10,15"
+                         reflow="true"
+                         var="insu">
+
+                <p:column headerText="ID" priority="2">
+                    <h:outputText value="#{insu.id}"/>
+                </p:column>
+                <p:column headerText="NOMBRE" priority="2">
+                    <h:outputText value="#{insu.nombre}"/>
+                </p:column>
+                <p:column headerText="CANTIDAD" priority="2">
+                    <h:outputText value="#{insu.cantidad} "/>
+                </p:column>
+                <p:column headerText="ESTADO" priority="2">
+                    <h:outputText value="#{insu.estado} "/>
+                </p:column>
+                <p:column headerText="OPCIONES" priority="2">
+                    <h:commandLink class="btn btn-primary" a:data-toggle="modal" a:data-target="#verInfoInsumo"
+                                   action="#{inventarioControlador.seleccionarInsumo(insu)}">
+                        <i class="fa fa-eye"></i>
+                        <f:ajax render=":verInfoInsumoContent" />
+                    </h:commandLink>
+                    <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                    <a class="btn btn-info"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger"><i class="fa fa-lock"></i></a>
+
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        
+                <h:form prependId="false">
+            <center><a class="btn btn-success" href="RegistroInsumo.xhtml"><i class="fa fa-plus">Registrar Nuevo Insumo</i></a></center>
+            <br/>
+            <h6 class="text-center" id="harinas"><b>HARINAS</b></h6>
+            <br/>
+            <p:dataTable class="table table-striped" value="#{inventarioControlador.insumos}" 
+                         rows="10"
+                         paginator="true"
+                         rowsPerPageTemplate="5,10,15"
+                         reflow="true"
+                         var="insu">
+
+                <p:column headerText="ID" priority="2">
+                    <h:outputText value="#{insu.id}"/>
+                </p:column>
+                <p:column headerText="NOMBRE" priority="2">
+                    <h:outputText value="#{insu.nombre}"/>
+                </p:column>
+                <p:column headerText="CANTIDAD" priority="2">
+                    <h:outputText value="#{insu.cantidad} "/>
+                </p:column>
+                <p:column headerText="ESTADO" priority="2">
+                    <h:outputText value="#{insu.estado} "/>
+                </p:column>
+                <p:column headerText="OPCIONES" priority="2">
+                    <h:commandLink class="btn btn-primary" a:data-toggle="modal" a:data-target="#verInfoInsumo"
+                                   action="#{inventarioControlador.seleccionarInsumo(insu)}">
+                        <i class="fa fa-eye"></i>
+                        <f:ajax render=":verInfoInsumoContent" />
+                    </h:commandLink>
+                    <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                    <a class="btn btn-info"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger"><i class="fa fa-lock"></i></a>
+
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        
+                <h:form prependId="false">
+            <center><a class="btn btn-success" href="RegistroInsumo.xhtml"><i class="fa fa-plus">Registrar Nuevo Insumo</i></a></center>
+            <br/>
+            <h6 class="text-center" id="verduras"><b>VERDURAS</b></h6>
+            <br/>
+            <p:dataTable class="table table-striped" value="#{inventarioControlador.insumos}" 
+                         rows="10"
+                         paginator="true"
+                         rowsPerPageTemplate="5,10,15"
+                         reflow="true"
+                         var="insu">
+
+                <p:column headerText="ID" priority="2">
+                    <h:outputText value="#{insu.id}"/>
+                </p:column>
+                <p:column headerText="NOMBRE" priority="2">
+                    <h:outputText value="#{insu.nombre}"/>
+                </p:column>
+                <p:column headerText="CANTIDAD" priority="2">
+                    <h:outputText value="#{insu.cantidad} "/>
+                </p:column>
+                <p:column headerText="ESTADO" priority="2">
+                    <h:outputText value="#{insu.estado} "/>
+                </p:column>
+                <p:column headerText="OPCIONES" priority="2">
+                    <h:commandLink class="btn btn-primary" a:data-toggle="modal" a:data-target="#verInfoInsumo"
+                                   action="#{inventarioControlador.seleccionarInsumo(insu)}">
+                        <i class="fa fa-eye"></i>
+                        <f:ajax render=":verInfoInsumoContent" />
+                    </h:commandLink>
+                    <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                    <a class="btn btn-info"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger"><i class="fa fa-lock"></i></a>
+
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+        <ui:include src="/WEB-INF/includes/modal/inventario/ver_insumos.xhtml"></ui:include>
+        <ui:include src="/WEB-INF/includes/modal/inventario/confirmar_eliminar.xhtml"></ui:include>
+
+    </ui:define>
+
+</ui:composition>
+

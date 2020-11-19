@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionControlador.validarSesion()}"/>
+    </f:metadata>
+    <h:head>
+        <ui:include src="/WEB-INF/includes/head/head.xhtml"></ui:include>
+        <title><ui:insert name="title"></ui:insert> | Pastas y Pizzas</title>
+        <ui:insert name="headPlus"></ui:insert>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var unique_id = $.gritter.add({
+                    // (string | mandatory) the heading of the notification
+                    title: 'Bienvenido ${nombreUsuario} al modulo ${ruta}!',
+                    // (string | mandatory) the text inside the notification
+                    text: 'No olvidar cerrar sesion',
+                    // (string | optional) the image to display on the left
+                    image: '../img/ui-sam.jpg',
+                    // (bool | optional) if you want it to fade out on its own or just sit there
+                    sticky: false,
+                    // (int | optional) the time you want it to be alive for before fading out
+                    time: 8000,
+                    // (string | optional) the class name you want to apply to that specific message
+                    class_name: 'my-sticky-class'
+                });
+
+                return false;
+            });
+        </script>
+    </h:head>
+    <h:body id="page-top">
+        <ui:param name="nombreUsuario" value="Josarta"></ui:param>
+        <ui:include src="/WEB-INF/includes/navegacion/menu-lateral.xhtml"></ui:include>
+        <div id="right-panel" class="right-panel">
+            <ui:include src="/WEB-INF/includes/navegacion/menu-superior.xhtml"></ui:include>
+            <ui:insert name="contenido">
+
+            </ui:insert>
+            <!-- /.content -->
+            <!-- Footer -->
+            <ui:include src="/WEB-INF/includes/footer/footer.xhtml"></ui:include>
+            <!-- /.site-footer -->
+        </div>
+        <!-- Scripts -->
+        <ui:include src="/WEB-INF/includes/script/script.xhtml"></ui:include>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    template="/WEB-INF/includes2/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="contenido">
+        <br/><br/>
+        <br/>
+        <br/>
+
+        <div class="jumbotron" style="background-image: url(#{request.contextPath}/resource/img/Quienessomos.jpg); background-size: 100%">
+            <h1 class="display-3 mb-3" style="font-family: Garamond; font-size: 40px; color: white; margin-top: 10px; margin-left: 120px;">CONTÁCTENOS</h1> 
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="POST">
+                        <label for="Nombre">Nombre:</label>
+                        <input class="form-control" type="text" required="required" placeholder="Ingresa tu nombre" maxlength="40"/>
+                        <br/>
+                        <label for="Correo">Correo Electronico:</label>
+                        <input class="form-control" type="email" required="required" placeholder="ingresa tu correo electronio"/>
+                        <br/>
+                        <label for="Telefono">Telefono / Celular:</label>
+                        <input class="form-control" type="text" required="required" placeholder="Telefono / Celular" maxlength="10"/>
+                        <br/>
+                        <div class="form-group row">
+                            <div class="col-sm-12 col-md-12 mb-3">
+                                <label for="Mensaje">Mensaje: *</label>
+                                <textarea name="Mensaje" id="Mensaje" class="form-control"></textarea>
+                            </div>
+                        </div>   
+                        <button class="btn btn-success float-right">Enviar</button></form>
+
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <br/>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15908.091963546198!2d-74.157304!3d4.589897!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9dc48bd671c9dc6d!2sPizzer%C3%ADa%20Pastas%20y%20Pizza!5e0!3m2!1ses-419!2sco!4v1593570105863!5m2!1ses-419!2sco" width="350" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center>
+                    <h6 style="margin-left: 90px; font-size: 12px"><strong>Dirección:</strong> Cr 67 # 62B - 40 sur <br/> Barrio Madelena</h6>
+                    <h6 style="margin-left: 90px; font-size: 12px"><strong>Teléfono:</strong> 812 0486 - 741 2879 <br/> 311 567 2077</h6>
+                    <h6 style="margin-left: 90px; font-size: 12px"><strong>Correo Electronico:</strong> PastasyPizzasdelSur@gmail.com</h6>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>    
+   </ui:define>
+</ui:composition>
+

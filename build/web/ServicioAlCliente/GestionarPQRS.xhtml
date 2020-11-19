@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+    <ui:define name="contenido">
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>PQRS</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Servicio al Cliente</a></li>
+                                    <li class="active">PQRS Nuevas</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">PQRS NUEVAS</strong>
+                            </div>
+                            <div class="card-body">
+                                <h:form prependId="false">
+                                    <h:dataTable class="table table-striped" value="#{pqrsControlador.pqrs}"
+                                                 var="pqrs">
+                                        <h:column>
+                                            <f:facet name="header">ID:</f:facet>
+                                            <h:outputText value="#{pqrs.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">FECHA:</f:facet>
+                                            <h:outputText value="#{pqrs.fecha}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">OBSERVACIONES:</f:facet>
+                                            <h:outputText value="#{pqrs.observaciones}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">ESTADO:</f:facet>
+                                            <h:outputText value="#{pqrs.estado}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">OPCIONES:</f:facet>
+                                            <h:commandLink class="btn" style="color: whitesmoke; background: #03A900"  a:data-toggle="modal" a:data-target="#verInfoPqrs"
+                                                           action="#{pqrsControlador.seleccionarPqrs(pqrs)}">
+                                                <i class="fa fa-eye"></i>
+                                                <f:ajax render=":verInfoPqrsContent"/>
+                                            </h:commandLink>
+                                            <a class="btn" style="color: #03A900; background: #E7CD13"><i class="fa fa-pencil"></i></a>
+                                            <a class="btn" style="color: whitesmoke; background: #D20000"><i class="fa fa-trash"></i></a>
+                                            <a class="btn" style="color: #03A900; background: #DFDFDF"><i class="fa fa-lock"></i></a>
+
+                                        </h:column>
+
+                                    </h:dataTable> 
+                                </h:form>
+                                <ui:include src="/WEB-INF/includes/modal/pqrs/ver_info_pqrs.xhtml"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#add-category -->
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- /.content -->
+
+
+        <div class="clearfix"></div>
+
+    </ui:define>
+</ui:composition>
+

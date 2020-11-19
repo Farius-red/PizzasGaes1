@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <!-- modal mostrar usuarios-->
+    <div class="modal fade" id="verInfoPqrs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h:panelGroup id="verInfoPqrsContent" layout="block">
+                    <div class="modal-header" style="background-color: green">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="text-light" aria-hidden="true">&times;</span>
+                        </button>
+                        <span><center><img src="#{request.contextPath}/resource/img/LOgo.png" class="rounded-pill" target="_blank" style="height: 70px"/></center></span>             
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">ID:</label>
+                            <span class="form-control">#{pqrsControlador.pqrsSeleccionada.id}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Fecha:</label>
+                            <span class="form-control">#{pqrsControlador.pqrsSeleccionada.fecha}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Observaciones: </label>
+                            <span class="form-control">#{pqrsControlador.pqrsSeleccionada.observaciones}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Tipo de PQRS:</label>
+                            <span class="form-control">#{pqrsControlador.pqrsSeleccionada.tipoPQRS.nombre}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Administrador: </label>
+                            <span class="form-control">#{pqrsControlador.pqrsSeleccionada.administrador.usuario.primerNombre} #{pqrsControlador.pqrsSeleccionada.administrador.usuario.primerApellido}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Cliente: </label>
+                            <span class="form-control">#{pqrsControlador.pqrsSeleccionada.cliente.usuario.primerNombre} #{pqrsControlador.pqrsSeleccionada.cliente.usuario.primerApellido}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Estado: </label>
+                            <span class="form-control">#{pqrsControlador.pqrsSeleccionada.estado}</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </h:panelGroup>
+            </div>
+        </div>
+    </div>
+</ui:composition>
+

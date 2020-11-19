@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+
+            <center><a class="btn btn-success" href="RegistroUsuario.xhtml"><i class="fa fa-plus">Registrar Nuevo Usuario</i></a></center>
+            <br/>
+            <h6 class="text-center"><b>Usuario</b></h6>
+            <br/>
+            <h:dataTable class="table table-striped" value="#{usuarioControlador.usuarios}" 
+                         rows="10"
+                         var="usuario">
+
+                <h:column>
+                    <f:facet name="header">ID:</f:facet>
+                    <h:outputText value="#{usuario.idUsuario}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ROL:</f:facet>
+                    <h:outputText value="#{usuario.rol.descripcion}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">NOMBRES:</f:facet>
+                    <h:outputText value="#{usuario.primerNombre} #{usuario.segundoNombre} "/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">APELLIDOS:</f:facet>
+                    <h:outputText value="#{usuario.primerApellido} #{usuario.segundoApellido} "/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">OPCIONES:</f:facet>
+                    <h:commandLink class="btn btn-primary" a:data-toggle="modal" a:data-target="#verInfoUsuario"
+                                   action="#{usuarioControlador.seleccionarUsuario(usuario)}">
+                        <i class="fa fa-eye"></i>
+                        <f:ajax render=":verInfoUsuarioContent"/>
+                    </h:commandLink>
+                    <h:commandLink class="btn btn-warning" a:data-toggle="modal" a:data-target="#editarInfoUsuario" 
+                                   action="#{usuarioControlador.seleccionarUsuario(usuario)}">
+                        <i class="fa fa-pencil"></i>
+                        <f:ajax render=":editarInfoUsuarioContent"/>
+                    </h:commandLink>
+                    <h:commandLink class="btn btn-info"
+                                   action="#{usuarioControlador.seleccionarUsuario(usuario)}" 
+                                   a:data-toggle="modal" a:data-target="#eliminarUsuario">
+                        <i class="fa fa-trash"></i>
+                        <f:ajax render=":confirmEliminarUsuario"/>
+                    </h:commandLink>
+                    <h:commandLink rendered="#{usuarioControlador.renderedBtnBloquear(usuario)}" class="btn btn-danger"
+                                   action="#{usuarioControlador.seleccionarUsuario(usuario)}"
+                                   a:data-toggle="modal" a:data-target="#bloquearUsuario"
+                                   >
+                        <i class="fa fa-unlock"></i>
+                        <f:ajax render=":confirmarBloquearUsuario"/>
+                    </h:commandLink>
+                    <h:commandLink rendered="#{empty usuario.estado or usuario.estado eq 0}" class="btn btn-danger"
+                                   action="#{usuarioControlador.seleccionarUsuario(usuario)}"
+                                   a:data-toggle="modal" a:data-target="#bloquearUsuario"
+                                   >
+                        <i class="fa fa-lock"></i>
+                        <f:ajax render=":confirmarBloquearUsuario"/>
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        <ui:include src="/WEB-INF/includes/modal/usuarios/ver_info_usuario.xhtml"></ui:include>
+        <ui:include src="/WEB-INF/includes/modal/usuarios/confirmar_eliminar.xhtml"></ui:include>
+        <ui:include src="/WEB-INF/includes/modal/usuarios/confirmar_bloquear.xhtml"></ui:include>
+        <ui:include src="/WEB-INF/includes/modal/usuarios/editar_info_usuario.xhtml"></ui:include>
+
+
+
+
+    </ui:define>
+</ui:composition>
+

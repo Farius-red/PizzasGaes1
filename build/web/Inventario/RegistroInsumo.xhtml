@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/includes/template.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="contenido">
+        <h:form prependId="false"> 
+            <br/>
+            <h3 class="text-center"><b style="color: green">REGISTRAR INSUMOS</b></h3>
+            <br/>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group" style="margin-left:20px">
+                        <label for="message-text" class="col-form-label">Tipo de Insumo: <b style="color: red">*</b></label>
+                        <h:selectOneMenu class="form-control" value="#{inventarioControlador.nuevoInsumo.tipoInsumo}">
+                            <f:selectItem itemLabel="Seleccione un tipo de Insumo" itemValue=""/>
+                            <f:selectItems value="#{tipoInsumoControlador.tiposInsumo}" var="ti" itemLabel="#{ti.nombre}"/>
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="form-group"  style="margin-left:20px">
+                        <label for="message-text" class="col-form-label">Auxiliar Cocina: <b style="color: red">*</b></label>
+                        <h:selectOneMenu class="form-control" value="#{inventarioControlador.nuevoInsumo.auxCocina}">
+                            <f:selectItem itemLabel="Seleccione un tipo de Insumo" itemValue=""/>
+                            <f:selectItems value="#{auxCocinaControlador.auxCocina}" var="aux" itemLabel="#{aux.id}"/>
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="form-group" style="margin-left:20px">
+                        <label for="message-text" class="col-form-label">FECHA DE INGRESO: <b style="color: red">*</b></label>
+                        <h:inputText class="form-control" value="#{inventarioControlador.nuevoInsumo.fechaIngreso}">
+                            <f:convertDateTime pattern="yyyy-MM-dd"/>
+                        </h:inputText>
+                    </div>
+                    <div class="form-group" style="margin-left:20px">
+                        <label for="message-text" class="col-form-label">FECHA DE VENCIMIENTO: <b style="color: red">*</b></label>
+                        <h:inputText class="form-control" value="#{inventarioControlador.nuevoInsumo.fechaVencimiento}">
+                            <f:convertDateTime pattern="yyyy-MM-dd"/>
+                        </h:inputText>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" style="margin-right:20px">
+                        <label for="message-text" class="col-form-label">NOMBRE: <b style="color: red">*</b></label>
+                        <h:inputText class="form-control" value="#{inventarioControlador.nuevoInsumo.nombre}"/>
+                    </div>
+                    <div class="form-group" style="margin-right:20px">
+                        <label for="message-text" class="col-form-label">DESCRIPCION: <b style="color: red">*</b></label>
+                        <h:inputText class="form-control" value="#{inventarioControlador.nuevoInsumo.descripcion}"/>
+                    </div>
+                    <div class="form-group" style="margin-right:20px">
+                        <label for="message-text"  class="col-form-label">CANTIDAD: </label>
+                        <h:inputText class="form-control"  a:type="number" value="#{inventarioControlador.nuevoInsumo.cantidad}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <center><a class="btn btn-danger" 
+                           href="RegistroInsumo.xhtml">Cancelar
+                    </a>
+                    <h:commandButton class="btn btn-success"
+                                     value="Registrar" action="#{inventarioControlador.registrar()}" style="margin-right: 10px"/></center>
+            </div>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+

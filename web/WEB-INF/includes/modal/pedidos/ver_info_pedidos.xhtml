@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <!-- modal mostrar usuarios-->
+    <div class="modal fade" id="verInfoPedidos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h:panelGroup id="verInfoPedidosContent" layout="block">
+                    <div class="modal-header" style="background-color: green">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="text-light" aria-hidden="true">&times;</span>
+                        </button>
+                        <span><center><img src="#{request.contextPath}/resource/img/LOgo.png" class="rounded-pill" target="_blank" style="height: 70px"/></center></span>             
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">ID:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.id}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">CLIENTE:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.cliente.usuario.primerNombre} #{pedidosControlador.pedidoSeleccionado.cliente.usuario.primerApellido}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">FECHA:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.fecha}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">CANTIDAD:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.cantidad}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">VALOR UNITARIO:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.valorUnitario}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">VALOR TOTAL:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.valorTotal}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">TIPO DE PEDIDO:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.tipoPedido}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">TELEFONO:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.telefono}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">PUNTO DE ENTREGA:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.puntoEntrega}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">OBSERVACIONES:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.observaciones}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">ESTADO:</label>
+                            <span class="form-control">#{pedidosControlador.pedidoSeleccionado.estado}</span>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </h:panelGroup>
+            </div>
+        </div>
+    </div>
+</ui:composition>
+

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+        <nav class="navbar navbar-expand-lg fixed-top py-3"  style="z-index: 1000">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../ServicioAlCliente/Pagina.xhtml"><img src="#{request.contextPath}/resource/img/Logo2.png" class="logo-brand" alt="logo"/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ServicioAlCliente/Pagina.xhtml" style="margin-top: 10px;">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ServicioAlCliente/QuienesSomos.xhtml" style="margin-top: 10px;">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ServicioAlCliente/MenuCliente.xhtml" style="margin-top: 10px;" >Menú</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <i class="fas fa-cart-arrow-down nav-link dropdown-toggle" height="50px" width="50px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 40px; margin-top: 10px;"></i>
+                            <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                <table id="lista-carrito" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="btn btn-danger btn-block">Vaciar Carrito</a>
+                                <a href="#" id="procesar-pedido" class="btn btn-success btn-block">Realizar Pedido</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ServicioAlCliente/PQRS.xhtml" style="margin-top: 10px;">PQRS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ServicioAlCliente/ContactenosCliente.xhtml" style="margin-top: 10px;">Contáctenos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  dropdown-toggle" href="../ServicioAlCliente/Perfil.xhtml" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user" style="font-size: 20px;"></i></a>
+                            <h6 class="text-right" style="color: white;">${nombreUsuario}</h6>
+                            <div class="dropdown-menu col-lg-12" style="text-align: right;" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="../ServicioAlCliente/Perfil.xhtml">Perfil</a>
+                                <a class="dropdown-item" href="../Pagina1.xhtml">Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</ui:composition>
+

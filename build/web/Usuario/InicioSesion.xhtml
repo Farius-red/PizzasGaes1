@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view locale="#{languagecontroller.locale}">
+
+        <h:head>
+            <meta charset="utf-8"/>
+            <meta name="viewport"
+                  content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1.0"/>
+            <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resource/css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resource/css/inicio sesion.css"/>
+            <link rel="icon" type="Pagina" href="img/Logo2.png"/>
+            <title>#{msjLogin.title}</title>
+        </h:head>
+        <h:body>
+
+            <div class="container">
+                <div class="row justify-content-center pt-5 mt-5 m-1">
+                    <div class="col-xs-12 col-sm-12 col-md-6  col-lg-5 formulario">
+                        <h:form prependId="false">
+                            <h:selectOneMenu value="#{languagecontroller.lang}"
+                                             onchange="submit();" style="background: green; color: white">
+                                <f:selectItems value="#{languagecontroller.locales}"
+                                               var="l" itemLabel="#{l.language}"/>
+                            </h:selectOneMenu>
+                        </h:form>
+                        <h:form id="formularioInicioSesion">
+                            <div class="form-group text-center">
+                                <img src="#{request.contextPath}/resource/img/LOgo.png" class="logo img-fluid "/>
+                                <h3>#{msjLogin.title}</h3>
+                            </div>
+                            <h:messages showDetail="true" layout="table"
+                                        style="padding: 5px; border-radius: 5px; box-shadow: 0px, 0px, 4px #444; display: block; color: red"
+                                        errorStyle="background: #FF0000" infoClass="background: #999999"/>
+                            <div class="form-group mx-sm-4 pt-3 user">
+                                <h:inputText class="form-control" id="usuario" a:type="text" a:placeholder="#{msjLogin.usuarioPlaceholder}" 
+                                             required="" value="#{sessionControlador.email}"/>
+                            </div>
+
+                            <div class="form-group mx-sm-4 pb-3 user">
+                                <h:inputSecret class="form-control" id="contraseña"
+                                               a:placeholder="#{msjLogin.ContraseñaLabel}" required="" 
+                                               value="#{sessionControlador.password}"/>
+                            </div>
+
+                            <div class="form-group mx-sm-4">
+                                <h:commandLink class="btn btn-block ingresar" value="#{msjLogin.btnIngresarValue}" action="#{sessionControlador.startSession()}"/>
+                                <br/>
+                                <div class="form-group mx-sm-4 text-center">
+                                    <span><a href="#" class="olvide1 btn-block">#{msjLogin.btnRegistrarseValue} </a></span>
+                                </div>
+
+                                <div class="form-group mx-sm-4 text-center mb-5">
+                                    <span><a href="#" class="olvide">#{msjLogin.OlvidasteContraseñalabel}</a></span>
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="#{request.contextPath}/resource/js/InicioSesion.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        </h:body>
+    </f:view>
+</html>
+
